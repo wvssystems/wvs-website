@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WVS Systems</title>
+  <link rel="icon" href="logo.png" type="image/png" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="site-header-inner">
+      <div class="logo">
+        <img src="logo.png" alt="Logo WVS Sistemas" />
+      </div>
+      <nav class="main-nav">
+        <a href="#home" data-i18n="nav.home">Home</a>
+        <a href="#sobre" data-i18n="nav.about">Sobre</a>
+        <a href="#servicos" data-i18n="nav.services">Serviços</a>
+        <a href="#como" data-i18n="nav.process">Como fazemos</a>
+        <a href="#contato" data-i18n="nav.contact">Contato</a>
+      </nav>
+      <div class="header-actions">
+        <a class="cta-btn" href="#contato" data-i18n="cta.contact">Solicitar Contato</a>
+        <div class="lang-toggle" role="group" aria-label="Selecionar idioma">
+          <button data-lang="pt" class="active" aria-label="Português">
+            <span class="flag" aria-hidden="true">🇧🇷</span>
+            <span class="lang-code">PT</span>
+          </button>
+          <button data-lang="en" aria-label="English">
+            <span class="flag" aria-hidden="true">🇺🇸</span>
+            <span class="lang-code">EN</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="home" class="hero">
+      <div class="hero-content">
+        <div class="hero-copy overlay">
+          <p class="eyebrow" data-i18n="hero.eyebrow">WVS Systems</p>
+          <h1 class="hero-title" data-i18n="hero.title">Transformamos desafios operacionais em oportunidades de crescimento</h1>
+          <p data-i18n="hero.description">Projetamos, implementamos e sustentamos plataformas digitais que conectam canais, pessoas e processos para que sua empresa opere com clareza, governança e escala.</p>
+          <div class="hero-actions">
+            <a class="primary" href="#contato" data-i18n="hero.primary">Fale com a gente</a>
+            <a class="secondary" href="#servicos" data-i18n="hero.secondary">Conheça nossos serviços</a>
+          </div>
+          <div class="hero-metrics">
+            <div>
+              <strong data-i18n="hero.metric1.value">+12</strong>
+              <span data-i18n="hero.metric1.label">anos entregando plataformas empresariais</span>
+            </div>
+            <div>
+              <strong data-i18n="hero.metric2.value">5M+</strong>
+              <span data-i18n="hero.metric2.label">operações monitoradas por mês</span>
+            </div>
+            <div>
+              <strong data-i18n="hero.metric3.value">24/7</strong>
+              <span data-i18n="hero.metric3.label">suporte para times e clientes</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="sobre" class="section about">
+      <div class="section-heading">
+        <p class="eyebrow" data-i18n="about.eyebrow">Sobre a WVS</p>
+        <h2 data-i18n="about.title">Tecnologia aplicada ao negócio, do discovery à sustentação</h2>
+      </div>
+      <div class="about-grid">
+        <div>
+          <p data-i18n="about.text1">Apoiamos empresas brasileiras na digitalização de jornadas críticas, conectando sistemas legados, canais digitais e equipes internas em um único fluxo confiável. Atuamos lado a lado com seu time para descobrir oportunidades, priorizar iniciativas e entregar releases frequentes.</p>
+          <p data-i18n="about.text2">Nossas squads combinam engenharia, produto e governança para que cada ciclo gere valor mensurável. Seja para lançar um novo serviço, ganhar eficiência ou reforçar a conformidade, criamos arquiteturas preparadas para escalar.</p>
+        </div>
+        <div class="about-highlight">
+          <blockquote data-i18n="about.quote">"Nosso compromisso é transformar operações complexas em experiências simples e orquestradas, com performance e segurança end-to-end."</blockquote>
+          <ul>
+            <li data-i18n="about.point1">Discovery orientado a dados e stakeholders reais.</li>
+            <li data-i18n="about.point2">Governança sobre regras, integrações e indicadores.</li>
+            <li data-i18n="about.point3">Times especializados em finanças, varejo e serviços.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="clientes" class="section section-alt partners">
+      <div class="section-heading">
+        <p class="eyebrow" data-i18n="partners.eyebrow">Confiança construída</p>
+        <h2 data-i18n="partners.title">Parcerias que aceleram resultados</h2>
+      </div>
+      <p class="section-text" data-i18n="partners.text">Atuamos com fintechs, varejistas, indústrias e prestadoras de serviço em projetos de alto impacto, criando plataformas que suportam crescimento exponencial.</p>
+      <div class="logo-strip">
+        <span>Fintechs</span>
+        <span>Varejo</span>
+        <span>Indústria</span>
+        <span>Educação</span>
+        <span>Healthcare</span>
+      </div>
+    </section>
+
+    <section class="section commitment">
+      <div class="commitment-grid">
+        <div>
+          <p class="eyebrow" data-i18n="commitment.eyebrow">Nosso compromisso</p>
+          <h2 data-i18n="commitment.title">Clareza, controle e escala para cada operação</h2>
+          <p data-i18n="commitment.text">Implementamos plataformas que eliminam retrabalhos, reduzem riscos e dão visibilidade em tempo real do ciclo completo — da captação ao pós-venda.</p>
+        </div>
+        <div>
+          <ul class="checklist">
+            <li data-i18n="commitment.point1">Operação omnichannel, com regras unificadas.</li>
+            <li data-i18n="commitment.point2">KPIs e alertas inteligentes para decisões rápidas.</li>
+            <li data-i18n="commitment.point3">Arquiteturas modulares prontas para novos produtos.</li>
+          </ul>
+          <a class="link-cta" href="#servicos" data-i18n="commitment.cta">Conheça nossos serviços</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="servicos" class="section">
+      <div class="section-heading">
+        <p class="eyebrow" data-i18n="services.eyebrow">O que fazemos</p>
+        <h2 data-i18n="services.title">Serviços</h2>
+      </div>
+      <div class="cards-grid services-grid">
+        <article class="card">
+          <span class="card-icon">⚙️</span>
+          <h3 data-i18n="services.card1.title">Plataformas sob medida</h3>
+          <p data-i18n="services.card1.text">Arquiteturas componíveis, APIs e integrações seguras desenhadas para o ritmo do seu negócio.</p>
+        </article>
+        <article class="card">
+          <span class="card-icon">🧭</span>
+          <h3 data-i18n="services.card2.title">Discovery & Product Strategy</h3>
+          <p data-i18n="services.card2.text">Workshops, priorização e roadmaps que alinham tecnologia, finanças e operação.</p>
+        </article>
+        <article class="card">
+          <span class="card-icon">🤝</span>
+          <h3 data-i18n="services.card3.title">Outsourcing especializado</h3>
+          <p data-i18n="services.card3.text">Squads completas de engenharia, QA e UX para acelerar entregas sem perder governança.</p>
+        </article>
+        <article class="card">
+          <span class="card-icon">🔒</span>
+          <h3 data-i18n="services.card4.title">Sustentação & Compliance</h3>
+          <p data-i18n="services.card4.text">Monitoramento proativo, SLAs claros e adequação regulatória contínua.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="como" class="section section-alt process">
+      <div class="section-heading">
+        <p class="eyebrow" data-i18n="process.eyebrow">Como fazemos</p>
+        <h2 data-i18n="process.title">Processos inteligentes que entregam valor rápido</h2>
+      </div>
+      <div class="cards-grid">
+        <article class="card">
+          <h3 data-i18n="process.card1.title">Descoberta guiada</h3>
+          <p data-i18n="process.card1.text">Mapeamos jornadas, métricas e integrações críticas para definir o MVP certo.</p>
+        </article>
+        <article class="card">
+          <h3 data-i18n="process.card2.title">Entrega iterativa</h3>
+          <p data-i18n="process.card2.text">Sprints curtos, demos frequentes e adaptação contínua ao feedback do negócio.</p>
+        </article>
+        <article class="card">
+          <h3 data-i18n="process.card3.title">Arquitetura escalável</h3>
+          <p data-i18n="process.card3.text">Domínios bem definidos, componentes reutilizáveis e observabilidade nativa.</p>
+        </article>
+        <article class="card">
+          <h3 data-i18n="process.card4.title">Omnichannel real</h3>
+          <p data-i18n="process.card4.text">Regras centralizadas garantem experiências consistentes em loja, app, web e parceiros.</p>
+        </article>
+        <article class="card">
+          <h3 data-i18n="process.card5.title">Pronto para o novo</h3>
+          <p data-i18n="process.card5.text">Incorporamos rapidamente novos produtos e integrações sem reescrever o core.</p>
+        </article>
+        <article class="card">
+          <h3 data-i18n="process.card6.title">Segurança e compliance</h3>
+          <p data-i18n="process.card6.text">Governança sobre dados, acessos e auditoria em conformidade com as regras do setor.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section metrics" id="metricas">
+      <div class="section-heading">
+        <p class="eyebrow" data-i18n="metrics.eyebrow">Impacto em números</p>
+        <h2 data-i18n="metrics.title">Operações monitoradas e resultados mensuráveis</h2>
+      </div>
+      <div class="metrics-grid">
+        <article>
+          <strong data-i18n="metrics.card1.value">5M+</strong>
+          <span data-i18n="metrics.card1.label">originações mensais suportadas pelas plataformas da WVS</span>
+        </article>
+        <article>
+          <strong data-i18n="metrics.card2.value">180M</strong>
+          <span data-i18n="metrics.card2.label">processos conciliados e auditáveis por mês</span>
+        </article>
+        <article>
+          <strong data-i18n="metrics.card3.value">56K</strong>
+          <span data-i18n="metrics.card3.label">contratos e tickets tratados com SLA automático</span>
+        </article>
+        <article>
+          <strong data-i18n="metrics.card4.value">72h</strong>
+          <span data-i18n="metrics.card4.label">para lançar novos fluxos e produtos configuráveis</span>
+        </article>
+      </div>
+    </section>
+
+    <section class="section why">
+      <div class="section-heading">
+        <p class="eyebrow" data-i18n="why.eyebrow">Por que escolher a WVS?</p>
+        <h2 data-i18n="why.title">Experiência prática aliada a engenharia de alto nível</h2>
+      </div>
+      <div class="why-grid">
+        <article>
+          <h3 data-i18n="why.card1.title">Expertise comprovada</h3>
+          <p data-i18n="why.card1.text">Mais de 15 anos construindo soluções para finanças, varejo, energia e educação.</p>
+        </article>
+        <article>
+          <h3 data-i18n="why.card2.title">Soluções personalizadas</h3>
+          <p data-i18n="why.card2.text">Estratégias feitas sob medida, respeitando contexto, legado e objetivos de cada cliente.</p>
+        </article>
+        <article>
+          <h3 data-i18n="why.card3.title">Resultados mensuráveis</h3>
+          <p data-i18n="why.card3.text">Cada entrega vem com indicadores claros e planos de evolução contínua.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section section-alt tech" id="tecnologias">
+      <div class="section-heading">
+        <p class="eyebrow" data-i18n="tech.eyebrow">Tecnologias</p>
+        <h2 data-i18n="tech.title">Stack moderno para cada desafio</h2>
+      </div>
+      <div class="tech-grid">
+        <figure class="tech-card">
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230b1120'/%3E%3Cpath d='M32 44c-8 0-12-2.3-12-4.5s4-4.5 12-4.5 12 2.3 12 4.5S40 44 32 44Z' fill='%23f97316'/%3E%3Cpath d='M26 24c2.5 3 10 5 8 9-1 2-3 2-3 3' stroke='%23f97316' stroke-width='2' stroke-linecap='round' fill='none'/%3E%3Cpath d='M34 18c2 2 5 4 3 7-1 2-3 2-3 3' stroke='%23f97316' stroke-width='2' stroke-linecap='round' fill='none'/%3E%3C/svg%3E" alt="Logo Java" loading="lazy" />
+          <figcaption>Java</figcaption>
+        </figure>
+        <figure class="tech-card">
+          <img src="https://cdn.simpleicons.org/dotnet/512BD4" alt="Logo .NET" loading="lazy" />
+          <figcaption>.NET</figcaption>
+        </figure>
+        <figure class="tech-card">
+          <img src="https://cdn.simpleicons.org/node.js/339933" alt="Logo Node.js" loading="lazy" />
+          <figcaption>Node.js</figcaption>
+        </figure>
+        <figure class="tech-card">
+          <img src="https://cdn.simpleicons.org/react/61DAFB" alt="Logo React" loading="lazy" />
+          <figcaption>React</figcaption>
+        </figure>
+        <figure class="tech-card">
+          <img src="https://cdn.simpleicons.org/flutter/02569B" alt="Logo Flutter" loading="lazy" />
+          <figcaption>Flutter</figcaption>
+        </figure>
+        <figure class="tech-card">
+          <img src="https://cdn.simpleicons.org/angular/DD0031" alt="Logo Angular" loading="lazy" />
+          <figcaption>Angular</figcaption>
+        </figure>
+        <figure class="tech-card">
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23090f20'/%3E%3Ctext x='32' y='28' font-size='18' text-anchor='middle' fill='white' font-family='Arial,sans-serif'%3Eaws%3C/text%3E%3Cpath d='M18 40c4 4 11 6 14 6s10-2 14-6' stroke='%23facc15' stroke-width='3' fill='none' stroke-linecap='round'/%3E%3C/svg%3E" alt="Logo AWS" loading="lazy" />
+          <figcaption>AWS</figcaption>
+        </figure>
+        <figure class="tech-card">
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230d2451'/%3E%3Cpath d='M14 44 30 12h14L28 44Z' fill='%2360a5fa'/%3E%3Cpath d='M50 44H32l12-20' fill='%230d2451' stroke='%2393c5fd' stroke-width='2' stroke-linejoin='round'/%3E%3C/svg%3E" alt="Logo Azure" loading="lazy" />
+          <figcaption>Azure</figcaption>
+        </figure>
+        <figure class="tech-card">
+          <img src="https://cdn.simpleicons.org/docker/2496ED" alt="Logo Docker" loading="lazy" />
+          <figcaption>Docker</figcaption>
+        </figure>
+        <figure class="tech-card">
+          <img src="https://cdn.simpleicons.org/kubernetes/326CE5" alt="Logo Kubernetes" loading="lazy" />
+          <figcaption>Kubernetes</figcaption>
+        </figure>
+        <figure class="tech-card">
+          <img src="https://cdn.simpleicons.org/apachekafka/231F20" alt="Logo Kafka" loading="lazy" />
+          <figcaption>Kafka</figcaption>
+        </figure>
+        <figure class="tech-card">
+          <img src="https://cdn.simpleicons.org/postgresql/4169E1" alt="Logo PostgreSQL" loading="lazy" />
+          <figcaption>PostgreSQL</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section id="contato" class="section contact-hero">
+      <div class="section-heading">
+        <p class="eyebrow" data-i18n="contact.eyebrow">Vamos conversar</p>
+        <h2 data-i18n="contact.title">Contato</h2>
+      </div>
+      <div class="contact-grid">
+        <div>
+          <p class="section-text" data-i18n="contact.text">Conte para a WVS Systems quais desafios precisam ser acelerados. Retornamos com um plano de ação em até 48 horas.</p>
+          <ul class="contact-info">
+            <li><strong data-i18n="contact.emailLabel">E-mail:</strong> <span data-i18n="contact.emailValue">contato@wvssistemas.com.br</span></li>
+            <li><strong data-i18n="contact.phoneLabel">Telefone:</strong> <span data-i18n="contact.phoneValue">(00) 0000-0000</span></li>
+          </ul>
+        </div>
+        <form class="contact-form">
+          <label>
+            <span data-i18n="form.name">Nome</span>
+            <input type="text" placeholder="Seu nome" data-i18n-placeholder="form.namePlaceholder" />
+          </label>
+          <label>
+            <span data-i18n="form.email">E-mail</span>
+            <input type="email" placeholder="Seu e-mail" data-i18n-placeholder="form.emailPlaceholder" />
+          </label>
+          <label>
+            <span data-i18n="form.message">Mensagem</span>
+            <textarea rows="4" placeholder="Como podemos ajudar?" data-i18n-placeholder="form.messagePlaceholder"></textarea>
+          </label>
+          <button type="submit" data-i18n="form.submit">Enviar mensagem</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p data-i18n="footer.text">© <span id="year"></span> WVS Systems — CNPJ 16.970.826/0001-13</p>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const translations = {
+      'nav.home': { pt: 'Home', en: 'Home' },
+      'nav.about': { pt: 'Sobre', en: 'About' },
+      'nav.services': { pt: 'Serviços', en: 'Services' },
+      'nav.process': { pt: 'Como fazemos', en: 'How we work' },
+      'nav.contact': { pt: 'Contato', en: 'Contact' },
+      'cta.contact': { pt: 'Solicitar Contato', en: 'Request Contact' },
+      'hero.eyebrow': { pt: 'WVS Systems', en: 'WVS Systems' },
+      'hero.title': {
+        pt: 'Transformamos desafios operacionais em oportunidades de crescimento',
+        en: 'We turn operational challenges into growth opportunities'
+      },
+      'hero.description': {
+        pt: 'Projetamos, implementamos e sustentamos plataformas digitais que conectam canais, pessoas e processos para que sua empresa opere com clareza, governança e escala.',
+        en: 'We design, implement, and sustain digital platforms that connect channels, people, and processes so your company operates with clarity, governance, and scale.'
+      },
+      'hero.primary': { pt: 'Fale com a gente', en: "Let's talk" },
+      'hero.secondary': { pt: 'Conheça nossos serviços', en: 'Explore our services' },
+      'hero.metric1.value': { pt: '+12', en: '+12' },
+      'hero.metric1.label': {
+        pt: 'anos entregando plataformas empresariais',
+        en: 'years delivering enterprise platforms'
+      },
+      'hero.metric2.value': { pt: '5M+', en: '5M+' },
+      'hero.metric2.label': {
+        pt: 'operações monitoradas por mês',
+        en: 'operations monitored every month'
+      },
+      'hero.metric3.value': { pt: '24/7', en: '24/7' },
+      'hero.metric3.label': {
+        pt: 'suporte para times e clientes',
+        en: 'support for teams and customers'
+      },
+      'about.eyebrow': { pt: 'Sobre a WVS', en: 'About WVS' },
+      'about.title': {
+        pt: 'Tecnologia aplicada ao negócio, do discovery à sustentação',
+        en: 'Technology applied to business, from discovery to sustainment'
+      },
+      'about.text1': {
+        pt: 'Apoiamos empresas brasileiras na digitalização de jornadas críticas, conectando sistemas legados, canais digitais e equipes internas em um único fluxo confiável. Atuamos lado a lado com seu time para descobrir oportunidades, priorizar iniciativas e entregar releases frequentes.',
+        en: 'We help Brazilian companies digitize critical journeys, connecting legacy systems, digital channels, and internal teams in a single reliable flow. We work alongside your team to discover opportunities, prioritize initiatives, and deliver frequent releases.'
+      },
+      'about.text2': {
+        pt: 'Nossas squads combinam engenharia, produto e governança para que cada ciclo gere valor mensurável. Seja para lançar um novo serviço, ganhar eficiência ou reforçar a conformidade, criamos arquiteturas preparadas para escalar.',
+        en: 'Our squads combine engineering, product, and governance so each cycle generates measurable value. Whether launching a new service, gaining efficiency, or reinforcing compliance, we build architectures ready to scale.'
+      },
+      'about.quote': {
+        pt: '"Nosso compromisso é transformar operações complexas em experiências simples e orquestradas, com performance e segurança end-to-end."',
+        en: '“Our commitment is to turn complex operations into simple, orchestrated experiences with end-to-end performance and security.”'
+      },
+      'about.point1': {
+        pt: 'Discovery orientado a dados e stakeholders reais.',
+        en: 'Data-driven discovery with real stakeholders.'
+      },
+      'about.point2': {
+        pt: 'Governança sobre regras, integrações e indicadores.',
+        en: 'Governance over rules, integrations, and metrics.'
+      },
+      'about.point3': {
+        pt: 'Times especializados em finanças, varejo e serviços.',
+        en: 'Teams specialized in finance, retail, and services.'
+      },
+      'partners.eyebrow': { pt: 'Confiança construída', en: 'Trust built over time' },
+      'partners.title': { pt: 'Parcerias que aceleram resultados', en: 'Partnerships that accelerate results' },
+      'partners.text': {
+        pt: 'Atuamos com fintechs, varejistas, indústrias e prestadoras de serviço em projetos de alto impacto, criando plataformas que suportam crescimento exponencial.',
+        en: 'We partner with fintechs, retailers, industry players, and service providers on high-impact projects, creating platforms that sustain exponential growth.'
+      },
+      'commitment.eyebrow': { pt: 'Nosso compromisso', en: 'Our commitment' },
+      'commitment.title': {
+        pt: 'Clareza, controle e escala para cada operação',
+        en: 'Clarity, control, and scale for every operation'
+      },
+      'commitment.text': {
+        pt: 'Implementamos plataformas que eliminam retrabalhos, reduzem riscos e dão visibilidade em tempo real do ciclo completo — da captação ao pós-venda.',
+        en: 'We implement platforms that eliminate rework, reduce risk, and provide real-time visibility across the full cycle—from acquisition to post-sales.'
+      },
+      'commitment.point1': {
+        pt: 'Operação omnichannel, com regras unificadas.',
+        en: 'Omnichannel operation with unified rules.'
+      },
+      'commitment.point2': {
+        pt: 'KPIs e alertas inteligentes para decisões rápidas.',
+        en: 'Smart KPIs and alerts for fast decisions.'
+      },
+      'commitment.point3': {
+        pt: 'Arquiteturas modulares prontas para novos produtos.',
+        en: 'Modular architectures ready for new products.'
+      },
+      'commitment.cta': { pt: 'Conheça nossos serviços', en: 'See our services' },
+      'services.eyebrow': { pt: 'O que fazemos', en: 'What we do' },
+      'services.title': { pt: 'Serviços', en: 'Services' },
+      'services.card1.title': { pt: 'Plataformas sob medida', en: 'Tailor-made platforms' },
+      'services.card1.text': {
+        pt: 'Arquiteturas componíveis, APIs e integrações seguras desenhadas para o ritmo do seu negócio.',
+        en: 'Composable architectures, APIs, and secure integrations designed for your business pace.'
+      },
+      'services.card2.title': { pt: 'Discovery & Product Strategy', en: 'Discovery & Product Strategy' },
+      'services.card2.text': {
+        pt: 'Workshops, priorização e roadmaps que alinham tecnologia, finanças e operação.',
+        en: 'Workshops, prioritization, and roadmaps aligning technology, finance, and operations.'
+      },
+      'services.card3.title': { pt: 'Outsourcing especializado', en: 'Specialized outsourcing' },
+      'services.card3.text': {
+        pt: 'Squads completas de engenharia, QA e UX para acelerar entregas sem perder governança.',
+        en: 'Full squads of engineering, QA, and UX to accelerate delivery without losing governance.'
+      },
+      'services.card4.title': { pt: 'Sustentação & Compliance', en: 'Sustainment & Compliance' },
+      'services.card4.text': {
+        pt: 'Monitoramento proativo, SLAs claros e adequação regulatória contínua.',
+        en: 'Proactive monitoring, clear SLAs, and continuous regulatory alignment.'
+      },
+      'process.eyebrow': { pt: 'Como fazemos', en: 'How we work' },
+      'process.title': {
+        pt: 'Processos inteligentes que entregam valor rápido',
+        en: 'Smart processes that deliver value fast'
+      },
+      'process.card1.title': { pt: 'Descoberta guiada', en: 'Guided discovery' },
+      'process.card1.text': {
+        pt: 'Mapeamos jornadas, métricas e integrações críticas para definir o MVP certo.',
+        en: 'We map journeys, metrics, and critical integrations to define the right MVP.'
+      },
+      'process.card2.title': { pt: 'Entrega iterativa', en: 'Iterative delivery' },
+      'process.card2.text': {
+        pt: 'Sprints curtos, demos frequentes e adaptação contínua ao feedback do negócio.',
+        en: 'Short sprints, frequent demos, and continuous adaptation to business feedback.'
+      },
+      'process.card3.title': { pt: 'Arquitetura escalável', en: 'Scalable architecture' },
+      'process.card3.text': {
+        pt: 'Domínios bem definidos, componentes reutilizáveis e observabilidade nativa.',
+        en: 'Well-defined domains, reusable components, and native observability.'
+      },
+      'process.card4.title': { pt: 'Omnichannel real', en: 'True omnichannel' },
+      'process.card4.text': {
+        pt: 'Regras centralizadas garantem experiências consistentes em loja, app, web e parceiros.',
+        en: 'Centralized rules guarantee consistent experiences across store, app, web, and partners.'
+      },
+      'process.card5.title': { pt: 'Pronto para o novo', en: 'Ready for what’s next' },
+      'process.card5.text': {
+        pt: 'Incorporamos rapidamente novos produtos e integrações sem reescrever o core.',
+        en: 'We quickly incorporate new products and integrations without rewriting the core.'
+      },
+      'process.card6.title': { pt: 'Segurança e compliance', en: 'Security & compliance' },
+      'process.card6.text': {
+        pt: 'Governança sobre dados, acessos e auditoria em conformidade com as regras do setor.',
+        en: 'Governance over data, access, and audit aligned with industry regulations.'
+      },
+      'metrics.eyebrow': { pt: 'Impacto em números', en: 'Impact in numbers' },
+      'metrics.title': {
+        pt: 'Operações monitoradas e resultados mensuráveis',
+        en: 'Monitored operations and measurable results'
+      },
+      'metrics.card1.value': { pt: '5M+', en: '5M+' },
+      'metrics.card1.label': {
+        pt: 'originações mensais suportadas pelas plataformas da WVS',
+        en: 'monthly originations supported by WVS platforms'
+      },
+      'metrics.card2.value': { pt: '180M', en: '180M' },
+      'metrics.card2.label': {
+        pt: 'processos conciliados e auditáveis por mês',
+        en: 'processes reconciled and auditable every month'
+      },
+      'metrics.card3.value': { pt: '56K', en: '56K' },
+      'metrics.card3.label': {
+        pt: 'contratos e tickets tratados com SLA automático',
+        en: 'contracts and tickets handled with automated SLA'
+      },
+      'metrics.card4.value': { pt: '72h', en: '72h' },
+      'metrics.card4.label': {
+        pt: 'para lançar novos fluxos e produtos configuráveis',
+        en: 'to launch new configurable flows and products'
+      },
+      'why.eyebrow': { pt: 'Por que escolher a WVS?', en: 'Why choose WVS?' },
+      'why.title': {
+        pt: 'Experiência prática aliada a engenharia de alto nível',
+        en: 'Hands-on experience paired with top-tier engineering'
+      },
+      'why.card1.title': { pt: 'Expertise comprovada', en: 'Proven expertise' },
+      'why.card1.text': {
+        pt: 'Mais de 15 anos construindo soluções para finanças, varejo, energia e educação.',
+        en: 'Over 15 years building solutions for finance, retail, energy, and education.'
+      },
+      'why.card2.title': { pt: 'Soluções personalizadas', en: 'Tailored solutions' },
+      'why.card2.text': {
+        pt: 'Estratégias feitas sob medida, respeitando contexto, legado e objetivos de cada cliente.',
+        en: 'Strategies crafted to fit each client’s context, legacy, and goals.'
+      },
+      'why.card3.title': { pt: 'Resultados mensuráveis', en: 'Measurable results' },
+      'why.card3.text': {
+        pt: 'Cada entrega vem com indicadores claros e planos de evolução contínua.',
+        en: 'Every delivery includes clear KPIs and continuous improvement plans.'
+      },
+      'tech.eyebrow': { pt: 'Tecnologias', en: 'Technologies' },
+      'tech.title': { pt: 'Stack moderno para cada desafio', en: 'Modern stack for every challenge' },
+      'contact.eyebrow': { pt: 'Vamos conversar', en: "Let's talk" },
+      'contact.title': { pt: 'Contato', en: 'Contact' },
+      'contact.text': {
+        pt: 'Conte para a WVS Systems quais desafios precisam ser acelerados. Retornamos com um plano de ação em até 48 horas.',
+        en: 'Tell WVS Systems which challenges need acceleration. We reply with an action plan within 48 hours.'
+      },
+      'contact.emailLabel': { pt: 'E-mail:', en: 'Email:' },
+      'contact.emailValue': { pt: 'contato@wvssistemas.com.br', en: 'contato@wvssistemas.com.br' },
+      'contact.phoneLabel': { pt: 'Telefone:', en: 'Phone:' },
+      'contact.phoneValue': { pt: '(00) 0000-0000', en: '(00) 0000-0000' },
+      'form.name': { pt: 'Nome', en: 'Name' },
+      'form.email': { pt: 'E-mail', en: 'Email' },
+      'form.message': { pt: 'Mensagem', en: 'Message' },
+      'form.submit': { pt: 'Enviar mensagem', en: 'Send message' },
+      'footer.text': {
+        pt: '© <span id="year"></span> WVS Systems — CNPJ 16.970.826/0001-13',
+        en: '© <span id="year"></span> WVS Systems — CNPJ 16.970.826/0001-13'
+      }
+    };
+
+    const placeholders = {
+      'form.namePlaceholder': { pt: 'Seu nome', en: 'Your name' },
+      'form.emailPlaceholder': { pt: 'Seu e-mail', en: 'Your email' },
+      'form.messagePlaceholder': { pt: 'Como podemos ajudar?', en: 'How can we help?' }
+    };
+
+    function setLanguage(lang) {
+      document.documentElement.lang = lang === 'en' ? 'en' : 'pt-BR';
+      document.querySelectorAll('[data-i18n]').forEach((el) => {
+        const key = el.dataset.i18n;
+        if (!key || !translations[key]) return;
+        const value = translations[key][lang];
+        if (value) {
+          if (el.dataset.i18n === 'footer.text') {
+            el.innerHTML = value;
+            document.getElementById('year').textContent = new Date().getFullYear();
+            return;
+          }
+          el.textContent = value;
+        }
+      });
+
+      document.querySelectorAll('[data-i18n-placeholder]').forEach((el) => {
+        const key = el.dataset.i18nPlaceholder;
+        if (!key || !placeholders[key]) return;
+        const value = placeholders[key][lang];
+        if (value) {
+          el.setAttribute('placeholder', value);
+        }
+      });
+
+      document.querySelectorAll('.lang-toggle button').forEach((btn) => {
+        btn.classList.toggle('active', btn.dataset.lang === lang);
+      });
+    }
+
+    document.querySelectorAll('.lang-toggle button').forEach((button) => {
+      button.addEventListener('click', () => {
+        setLanguage(button.dataset.lang);
+      });
+    });
+
+    setLanguage('pt');
+  </script>
+</body>
+</html>
