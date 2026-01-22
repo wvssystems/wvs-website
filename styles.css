@@ -199,6 +199,51 @@ header, section, footer {
   margin-bottom: 0.25rem;
 }
 
+.institutional {
+  background: var(--white);
+  padding-block: 3rem;
+}
+
+.institutional-grid {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+}
+
+.institutional-card {
+  background: var(--white);
+  border: 1px solid var(--gray-200);
+  border-radius: 1.25rem;
+  padding: 1.5rem;
+  box-shadow: 0 15px 30px rgba(15, 23, 42, 0.06);
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.institutional-icon {
+  font-size: 2rem;
+}
+
+.institutional-card h2 {
+  font-size: 1.25rem;
+  color: var(--gray-900);
+}
+
+.institutional-card p,
+.institutional-card li {
+  color: var(--gray-600);
+}
+
+.institutional-card ul {
+  list-style: disc inside;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
 .hero-metrics span {
   font-size: 0.85rem;
   color: rgba(255, 255, 255, 0.85);
