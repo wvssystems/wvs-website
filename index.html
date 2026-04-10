@@ -16,6 +16,7 @@
       <nav class="main-nav">
         <a href="#home" data-i18n="nav.home">Home</a>
         <a href="#sobre" data-i18n="nav.about">Sobre</a>
+        <a href="#dms" data-i18n="nav.product">Produto</a>
         <a href="#servicos" data-i18n="nav.services">Serviços</a>
         <a href="#como" data-i18n="nav.process">Como fazemos</a>
         <a href="#contato" data-i18n="nav.contact">Contato</a>
@@ -119,6 +120,9 @@
       <div class="partner-carousel" role="region" aria-label="Parceiros globais">
         <div class="carousel-track">
           <div class="carousel-slide">
+            <img class="logo-anultech" src="assets/anultech-logo.png" alt="Parceiro Anultech" loading="lazy" />
+          </div>
+          <div class="carousel-slide">
             <img src="assets/arphoenixoficial.jpeg" alt="Parceiro Arphoenix" loading="lazy" />
           </div>
           <div class="carousel-slide">
@@ -128,6 +132,9 @@
             <img src="assets/toolssoftware.jpeg" alt="Parceiro Tools Software" loading="lazy" />
           </div>
           <!-- duplicated set for seamless loop -->
+          <div class="carousel-slide">
+            <img class="logo-anultech" src="assets/anultech-logo.png" alt="Parceiro Anultech" loading="lazy" />
+          </div>
           <div class="carousel-slide">
             <img src="assets/arphoenixoficial.jpeg" alt="Parceiro Arphoenix" loading="lazy" />
           </div>
@@ -185,6 +192,62 @@
           <h3 data-i18n="services.card4.title">Sustentação & Compliance</h3>
           <p data-i18n="services.card4.text">Monitoramento proativo, SLAs claros e adequação regulatória contínua.</p>
         </article>
+      </div>
+    </section>
+
+    <section id="dms" class="section product">
+      <div class="product-hero">
+        <div>
+          <p class="eyebrow" data-i18n="dms.eyebrow">Produto</p>
+          <h2 data-i18n="dms.title">DMS WVS — Document Management System para gestão inteligente</h2>
+          <p class="section-text" data-i18n="dms.description">Nosso Document Management System (DMS) centraliza contratos sociais, fotos de biometria e toda a documentação que sustenta o ciclo comercial de empresas que vivem de alto volume. O motor de IA lê, classifica e valida cada arquivo, liberando squads para focar na operação.</p>
+          <ul class="product-metrics">
+            <li>
+              <strong data-i18n="dms.metric1.value">3.000+</strong>
+              <span data-i18n="dms.metric1.label">vendas processadas por mês com fluxos auditáveis</span>
+            </li>
+            <li>
+              <strong data-i18n="dms.metric2.value">15K+</strong>
+              <span data-i18n="dms.metric2.label">documentos entre contratos, fotos e anexos analisados automaticamente</span>
+            </li>
+            <li>
+              <strong data-i18n="dms.metric3.value">200</strong>
+              <span data-i18n="dms.metric3.label">empresas com dados societários e biométricos sempre atualizados</span>
+            </li>
+          </ul>
+        </div>
+        <div class="product-card">
+          <h3 data-i18n="dms.card.title">Como entregamos</h3>
+          <ul>
+            <li data-i18n="dms.card.point1">Captura omnichannel: integrações com portais, app de vendas e parceiros.</li>
+            <li data-i18n="dms.card.point2">IA proprietária reconhece campos, valida legibilidade e aponta divergências.</li>
+            <li data-i18n="dms.card.point3">Regras configuráveis liberam ou bloqueiam fluxos conforme perfis de risco.</li>
+            <li data-i18n="dms.card.point4">Painéis mostram status por etapa e disparam alertas para squads e compliance.</li>
+          </ul>
+          <a class="link-cta" href="#contato" data-i18n="dms.card.cta">Solicitar demonstração</a>
+        </div>
+      </div>
+      <div class="product-grid">
+        <article class="product-feature">
+          <h3 data-i18n="dms.feature1.title">Arquitetura preparada para volume</h3>
+          <p data-i18n="dms.feature1.text">Processa picos de 3 mil vendas mensais, cada uma com múltiplos documentos e fotos, mantendo histórico organizado por cliente, jornada e status.</p>
+        </article>
+        <article class="product-feature">
+          <h3 data-i18n="dms.feature2.title">Governança sobre evidências</h3>
+          <p data-i18n="dms.feature2.text">Rastreabilidade ponta a ponta garante auditoria em contratos sociais, procurações, selfies e biometria do representante, com versionamento e retenção segura.</p>
+        </article>
+        <article class="product-feature">
+          <h3 data-i18n="dms.feature3.title">Insights acionáveis</h3>
+          <p data-i18n="dms.feature3.text">Dashboards mostram gargalos e SLA de análise em tempo real, permitindo decisões rápidas entre expansão comercial e compliance.</p>
+        </article>
+      </div>
+      <div class="product-client">
+        <img class="logo-anultech" src="assets/anultech-logo.png" alt="Logo Anultech" loading="lazy" />
+        <div>
+          <p class="eyebrow" data-i18n="dms.client.eyebrow">Cliente em produção</p>
+          <h3 data-i18n="dms.client.title">Anultech confia no DMS para orquestrar operações digitais</h3>
+          <p data-i18n="dms.client.text">Implementamos o DMS na Anultech para garantir governança sobre contratos e biometria em seus fluxos de onboarding. A plataforma oferece visibilidade em tempo real para o time comercial e reduz o tempo de aprovação de dossiês sensíveis.</p>
+        </div>
       </div>
     </section>
 
@@ -366,6 +429,7 @@
     const translations = {
       'nav.home': { pt: 'Home', en: 'Home' },
       'nav.about': { pt: 'Sobre', en: 'About' },
+      'nav.product': { pt: 'Produto', en: 'Product' },
       'nav.services': { pt: 'Serviços', en: 'Services' },
       'nav.process': { pt: 'Como fazemos', en: 'How we work' },
       'nav.contact': { pt: 'Contato', en: 'Contact' },
@@ -497,6 +561,81 @@
       'services.card4.text': {
         pt: 'Monitoramento proativo, SLAs claros e adequação regulatória contínua.',
         en: 'Proactive monitoring, clear SLAs, and continuous regulatory alignment.'
+      },
+      'dms.eyebrow': { pt: 'Produto', en: 'Product' },
+      'dms.title': {
+        pt: 'DMS WVS — Document Management System para gestão inteligente',
+        en: 'WVS DMS — Document Management System built for smart operations'
+      },
+      'dms.description': {
+        pt: 'Nosso Document Management System (DMS) centraliza contratos sociais, fotos de biometria e toda a documentação que sustenta o ciclo comercial de empresas que vivem de alto volume. O motor de IA lê, classifica e valida cada arquivo, liberando squads para focar na operação.',
+        en: 'Our Document Management System (DMS) centralizes bylaws, biometric photos, and every file that sustains the commercial cycle of high-volume companies. The AI engine reads, classifies, and validates each document so squads can focus on operations.'
+      },
+      'dms.metric1.value': { pt: '3.000+', en: '3,000+' },
+      'dms.metric1.label': {
+        pt: 'vendas processadas por mês com fluxos auditáveis',
+        en: 'sales processed every month with auditable flows'
+      },
+      'dms.metric2.value': { pt: '15K+', en: '15K+' },
+      'dms.metric2.label': {
+        pt: 'documentos entre contratos, fotos e anexos analisados automaticamente',
+        en: 'documents including contracts, photos, and attachments analyzed automatically'
+      },
+      'dms.metric3.value': { pt: '200', en: '200' },
+      'dms.metric3.label': {
+        pt: 'empresas com dados societários e biométricos sempre atualizados',
+        en: 'companies with corporate and biometric data always up to date'
+      },
+      'dms.card.title': { pt: 'Como entregamos', en: 'How we deliver' },
+      'dms.card.point1': {
+        pt: 'Captura omnichannel: integrações com portais, app de vendas e parceiros.',
+        en: 'Omnichannel capture: integrations with portals, sales apps, and partners.'
+      },
+      'dms.card.point2': {
+        pt: 'IA proprietária reconhece campos, valida legibilidade e aponta divergências.',
+        en: 'Proprietary AI recognizes fields, validates legibility, and flags mismatches.'
+      },
+      'dms.card.point3': {
+        pt: 'Regras configuráveis liberam ou bloqueiam fluxos conforme perfis de risco.',
+        en: 'Configurable rules release or block flows based on risk profiles.'
+      },
+      'dms.card.point4': {
+        pt: 'Painéis mostram status por etapa e disparam alertas para squads e compliance.',
+        en: 'Dashboards show stage status and trigger alerts for squads and compliance.'
+      },
+      'dms.card.cta': { pt: 'Solicitar demonstração', en: 'Request a demo' },
+      'dms.feature1.title': {
+        pt: 'Arquitetura preparada para volume',
+        en: 'Architecture built for volume'
+      },
+      'dms.feature1.text': {
+        pt: 'Processa picos de 3 mil vendas mensais, cada uma com múltiplos documentos e fotos, mantendo histórico organizado por cliente, jornada e status.',
+        en: 'Handles surges of 3,000 monthly sales, each with multiple documents and photos, keeping history organized by client, journey, and status.'
+      },
+      'dms.feature2.title': {
+        pt: 'Governança sobre evidências',
+        en: 'Governance over evidence'
+      },
+      'dms.feature2.text': {
+        pt: 'Rastreabilidade ponta a ponta garante auditoria em contratos sociais, procurações, selfies e biometria do representante, com versionamento e retenção segura.',
+        en: 'End-to-end traceability guarantees audit over bylaws, powers of attorney, selfies, and representative biometrics with versioning and secure retention.'
+      },
+      'dms.feature3.title': {
+        pt: 'Insights acionáveis',
+        en: 'Actionable insights'
+      },
+      'dms.feature3.text': {
+        pt: 'Dashboards mostram gargalos e SLA de análise em tempo real, permitindo decisões rápidas entre expansão comercial e compliance.',
+        en: 'Dashboards expose bottlenecks and analysis SLA in real time so teams can balance growth and compliance fast.'
+      },
+      'dms.client.eyebrow': { pt: 'Cliente em produção', en: 'Live customer' },
+      'dms.client.title': {
+        pt: 'Anultech confia no DMS para orquestrar operações digitais',
+        en: 'Anultech relies on the DMS to orchestrate digital operations'
+      },
+      'dms.client.text': {
+        pt: 'Implementamos o DMS na Anultech para garantir governança sobre contratos e biometria em seus fluxos de onboarding. A plataforma oferece visibilidade em tempo real para o time comercial e reduz o tempo de aprovação de dossiês sensíveis.',
+        en: 'We deployed the DMS at Anultech to ensure governance over contracts and biometrics in their onboarding flows. The platform gives real-time visibility to commercial teams and shortens the approval time of sensitive dossiers.'
       },
       'process.eyebrow': { pt: 'Como fazemos', en: 'How we work' },
       'process.title': {
