@@ -397,23 +397,26 @@
           <p class="section-text" data-i18n="contact.text">Conte para a WVS Systems quais desafios precisam ser acelerados. Retornamos com um plano de ação em até 48 horas.</p>
           <ul class="contact-info">
             <li><strong data-i18n="contact.emailLabel">E-mail:</strong> <a href="mailto:contato@wvssystems.com.br" data-i18n="contact.emailValue">contato@wvssystems.com.br</a></li>
-            <li><strong data-i18n="contact.phoneLabel">Telefone:</strong> <span data-i18n="contact.phoneValue">(00) 0000-0000</span></li>
           </ul>
         </div>
-        <form class="contact-form">
+        <form class="contact-form" novalidate>
           <label>
             <span data-i18n="form.name">Nome</span>
-            <input type="text" placeholder="Seu nome" data-i18n-placeholder="form.namePlaceholder" />
+            <input type="text" name="name" placeholder="Seu nome" data-i18n-placeholder="form.namePlaceholder" required />
           </label>
           <label>
             <span data-i18n="form.email">E-mail</span>
-            <input type="email" placeholder="Seu e-mail" data-i18n-placeholder="form.emailPlaceholder" />
+            <input type="email" name="email" placeholder="Seu e-mail" data-i18n-placeholder="form.emailPlaceholder" required />
           </label>
           <label>
             <span data-i18n="form.message">Mensagem</span>
-            <textarea rows="4" placeholder="Como podemos ajudar?" data-i18n-placeholder="form.messagePlaceholder"></textarea>
+            <textarea name="message" rows="4" placeholder="Como podemos ajudar?" data-i18n-placeholder="form.messagePlaceholder" required></textarea>
           </label>
+          <input type="hidden" name="_subject" value="Novo contato pelo site WVS Systems" />
+          <input type="hidden" name="_captcha" value="false" />
+          <input type="text" name="_honey" class="contact-form-honeypot" tabindex="-1" autocomplete="off" />
           <button type="submit" data-i18n="form.submit">Enviar mensagem</button>
+          <p class="contact-form-status" role="status" aria-live="polite"></p>
         </form>
       </div>
     </section>
@@ -727,12 +730,11 @@
       },
       'contact.emailLabel': { pt: 'E-mail:', en: 'Email:' },
       'contact.emailValue': { pt: 'contato@wvssystems.com.br', en: 'contato@wvssystems.com.br' },
-      'contact.phoneLabel': { pt: 'Telefone:', en: 'Phone:' },
-      'contact.phoneValue': { pt: '(00) 0000-0000', en: '(00) 0000-0000' },
       'form.name': { pt: 'Nome', en: 'Name' },
       'form.email': { pt: 'E-mail', en: 'Email' },
       'form.message': { pt: 'Mensagem', en: 'Message' },
       'form.submit': { pt: 'Enviar mensagem', en: 'Send message' },
+      'form.sending': { pt: 'Enviando...', en: 'Sending...' },
       'footer.text': {
         pt: '© <span id="year"></span> WVS Systems — CNPJ 16.970.826/0001-13',
         en: '© <span id="year"></span> WVS Systems — CNPJ 16.970.826/0001-13'
@@ -745,7 +747,35 @@
       'form.messagePlaceholder': { pt: 'Como podemos ajudar?', en: 'How can we help?' }
     };
 
+    const formMessages = {
+      success: {
+        pt: 'Mensagem enviada. Retornaremos em breve.',
+        en: 'Message sent. We will get back to you soon.'
+      },
+      error: {
+        pt: 'Nao foi possivel enviar agora. Tente novamente em instantes ou use o e-mail ao lado.',
+        en: 'Could not send right now. Please try again shortly or use the email shown here.'
+      }
+    };
+
+    const contactForm = document.querySelector('.contact-form');
+    const contactFormButton = contactForm?.querySelector('button[type="submit"]');
+    const contactFormStatus = contactForm?.querySelector('.contact-form-status');
+    const formSubmitEndpoint = 'https://formsubmit.co/ajax/contato@wvssystems.com.br';
+    let currentLanguage = 'pt';
+
+    function getLocalizedCopy(collection, key, lang = currentLanguage) {
+      return collection[key]?.[lang] || collection[key]?.pt || '';
+    }
+
+    function setFormStatus(key, type) {
+      if (!contactFormStatus) return;
+      contactFormStatus.textContent = key ? getLocalizedCopy(formMessages, key) : '';
+      contactFormStatus.dataset.state = type || '';
+    }
+
     function setLanguage(lang) {
+      currentLanguage = lang;
       document.documentElement.lang = lang === 'en' ? 'en' : 'pt-BR';
       document.querySelectorAll('[data-i18n]').forEach((el) => {
         const key = el.dataset.i18n;
@@ -773,12 +803,63 @@
       document.querySelectorAll('.lang-toggle button').forEach((btn) => {
         btn.classList.toggle('active', btn.dataset.lang === lang);
       });
+
+      if (contactFormButton) {
+        const labelKey = contactFormButton.dataset.loading === 'true' ? 'form.sending' : 'form.submit';
+        contactFormButton.textContent = getLocalizedCopy(translations, labelKey, lang);
+      }
+
+      if (contactFormStatus?.dataset.state) {
+        setFormStatus(contactFormStatus.dataset.state, contactFormStatus.dataset.state);
+      }
     }
 
     document.querySelectorAll('.lang-toggle button').forEach((button) => {
       button.addEventListener('click', () => {
         setLanguage(button.dataset.lang);
       });
+    });
+
+    contactForm?.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      setFormStatus('', '');
+
+      if (!contactForm.reportValidity()) {
+        return;
+      }
+
+      const formData = new FormData(contactForm);
+
+      if (contactFormButton) {
+        contactFormButton.disabled = true;
+        contactFormButton.dataset.loading = 'true';
+        contactFormButton.textContent = getLocalizedCopy(translations, 'form.sending');
+      }
+
+      try {
+        const response = await fetch(formSubmitEndpoint, {
+          method: 'POST',
+          headers: {
+            Accept: 'application/json'
+          },
+          body: formData
+        });
+
+        if (!response.ok) {
+          throw new Error('Request failed');
+        }
+
+        contactForm.reset();
+        setFormStatus('success', 'success');
+      } catch (error) {
+        setFormStatus('error', 'error');
+      } finally {
+        if (contactFormButton) {
+          contactFormButton.disabled = false;
+          contactFormButton.dataset.loading = 'false';
+          contactFormButton.textContent = getLocalizedCopy(translations, 'form.submit');
+        }
+      }
     });
 
     setLanguage('pt');

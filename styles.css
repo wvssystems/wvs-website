@@ -632,12 +632,17 @@ header, section, footer {
 .contact-hero .section-heading h2,
 .contact-hero .section-text,
 .contact-hero .contact-info,
-.contact-hero .contact-info strong {
+.contact-hero .contact-info strong,
+.contact-hero .contact-form label {
   color: var(--white);
 }
 
 .contact-hero .contact-info span {
   color: rgba(255, 255, 255, 0.9);
+}
+
+.contact-hero .contact-info a {
+  color: var(--white);
 }
 
 .contact-hero .contact-form input,
@@ -680,6 +685,11 @@ header, section, footer {
   gap: 1rem;
 }
 
+.contact-form-honeypot {
+  position: absolute;
+  left: -9999px;
+}
+
 .contact-form label {
   display: flex;
   flex-direction: column;
@@ -703,6 +713,26 @@ header, section, footer {
   border-radius: 0.6rem;
   cursor: pointer;
   font-weight: 600;
+}
+
+.contact-form button:disabled {
+  cursor: wait;
+  opacity: 0.8;
+}
+
+.contact-form-status {
+  min-height: 1.5rem;
+  margin: 0;
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.contact-form-status[data-state='success'] {
+  color: #d1fae5;
+}
+
+.contact-form-status[data-state='error'] {
+  color: #fee2e2;
 }
 
 .site-footer {
