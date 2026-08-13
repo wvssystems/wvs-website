@@ -513,6 +513,10 @@
           <input type="hidden" name="gbraid" value="" />
           <input type="hidden" name="wbraid" value="" />
           <input type="text" name="_honey" class="contact-form-honeypot" tabindex="-1" autocomplete="off" />
+          <label class="consent-check">
+            <input type="checkbox" name="privacy_consent" value="accepted" required />
+            <span data-i18n="form.privacyConsent">Li e concordo com a Política de Privacidade e autorizo a WVS Systems a entrar em contato sobre a solução.</span>
+          </label>
           <button type="submit" data-i18n="form.submit">Enviar mensagem</button>
           <p class="contact-form-status" role="status" aria-live="polite"></p>
         </form>
@@ -522,7 +526,20 @@
 
   <footer class="site-footer">
     <p data-i18n="footer.text">© <span id="year"></span> WVS Systems — CNPJ 16.970.826/0001-13</p>
+    <a href="/privacidade/" data-i18n="footer.privacy">Política de Privacidade</a>
   </footer>
+
+  <div class="cookie-banner" id="cookieBanner" role="dialog" aria-live="polite" aria-label="Preferências de cookies" hidden>
+    <div>
+      <strong data-i18n="cookies.title">Preferências de cookies</strong>
+      <p data-i18n="cookies.text">Usamos cookies necessários para o funcionamento do site e, com seu consentimento, cookies de análise e publicidade para medir visitas e melhorar campanhas.</p>
+      <a href="/privacidade/" data-i18n="cookies.link">Saiba mais</a>
+    </div>
+    <div class="cookie-actions">
+      <button type="button" class="cookie-secondary" data-cookie-choice="denied" data-i18n="cookies.reject">Recusar</button>
+      <button type="button" class="cookie-primary" data-cookie-choice="granted" data-i18n="cookies.accept">Aceitar</button>
+    </div>
+  </div>
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
@@ -899,12 +916,25 @@
       'form.challengeAudit': { pt: 'Auditoria, retenção e compliance', en: 'Audit, retention and compliance' },
       'form.challengeWorkflow': { pt: 'Automação de aprovações e fluxos', en: 'Approval and workflow automation' },
       'form.message': { pt: 'Mensagem', en: 'Message' },
+      'form.privacyConsent': {
+        pt: 'Li e concordo com a Política de Privacidade e autorizo a WVS Systems a entrar em contato sobre a solução.',
+        en: 'I have read and agree to the Privacy Policy and authorize WVS Systems to contact me about the solution.'
+      },
       'form.submit': { pt: 'Enviar mensagem', en: 'Send message' },
       'form.sending': { pt: 'Enviando...', en: 'Sending...' },
       'footer.text': {
         pt: '© <span id="year"></span> WVS Systems — CNPJ 16.970.826/0001-13',
         en: '© <span id="year"></span> WVS Systems — CNPJ 16.970.826/0001-13'
-      }
+      },
+      'footer.privacy': { pt: 'Política de Privacidade', en: 'Privacy Policy' },
+      'cookies.title': { pt: 'Preferências de cookies', en: 'Cookie preferences' },
+      'cookies.text': {
+        pt: 'Usamos cookies necessários para o funcionamento do site e, com seu consentimento, cookies de análise e publicidade para medir visitas e melhorar campanhas.',
+        en: 'We use necessary cookies for the website to work and, with your consent, analytics and advertising cookies to measure visits and improve campaigns.'
+      },
+      'cookies.link': { pt: 'Saiba mais', en: 'Learn more' },
+      'cookies.reject': { pt: 'Recusar', en: 'Reject' },
+      'cookies.accept': { pt: 'Aceitar', en: 'Accept' }
     };
 
     const placeholders = {
@@ -928,8 +958,46 @@
     const contactForm = document.querySelector('.contact-form');
     const contactFormButton = contactForm?.querySelector('button[type="submit"]');
     const contactFormStatus = contactForm?.querySelector('.contact-form-status');
+    const cookieBanner = document.getElementById('cookieBanner');
     const formSubmitEndpoint = 'https://formsubmit.co/ajax/contato@wvssystems.com.br';
+    const cookieConsentKey = 'wvs_cookie_consent';
     let currentLanguage = 'pt';
+
+    window.gtag('consent', 'default', {
+      ad_storage: 'denied',
+      ad_user_data: 'denied',
+      ad_personalization: 'denied',
+      analytics_storage: 'denied'
+    });
+
+    function applyCookieConsent(consent) {
+      const granted = consent === 'granted';
+      window.gtag('consent', 'update', {
+        ad_storage: granted ? 'granted' : 'denied',
+        ad_user_data: granted ? 'granted' : 'denied',
+        ad_personalization: granted ? 'granted' : 'denied',
+        analytics_storage: granted ? 'granted' : 'denied'
+      });
+    }
+
+    function saveCookieConsent(consent) {
+      localStorage.setItem(cookieConsentKey, consent);
+      applyCookieConsent(consent);
+      if (cookieBanner) {
+        cookieBanner.hidden = true;
+      }
+    }
+
+    function initializeCookieConsent() {
+      const savedConsent = localStorage.getItem(cookieConsentKey);
+      if (savedConsent) {
+        applyCookieConsent(savedConsent);
+        return;
+      }
+      if (cookieBanner) {
+        cookieBanner.hidden = false;
+      }
+    }
 
     function trackConversion(eventName, parameters = {}) {
       if (typeof window.gtag === 'function') {
@@ -1024,6 +1092,12 @@
       });
     });
 
+    document.querySelectorAll('[data-cookie-choice]').forEach((button) => {
+      button.addEventListener('click', () => {
+        saveCookieConsent(button.dataset.cookieChoice);
+      });
+    });
+
     contactForm?.addEventListener('submit', async (event) => {
       event.preventDefault();
       setFormStatus('', '');
@@ -1073,6 +1147,7 @@
     });
 
     populateAttributionFields();
+    initializeCookieConsent();
     setLanguage('pt');
   </script>
 </body>
