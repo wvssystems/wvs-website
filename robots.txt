@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://wvssystems.com.br/sitemap.xml

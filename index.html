@@ -7,6 +7,11 @@
   <meta name="description" content="Sistema de gestão empresarial de documentos com OCR, trilha de auditoria, permissões, retenção e automação de fluxos documentais." />
   <link rel="icon" href="logo.png" type="image/png" />
   <link rel="stylesheet" href="styles.css" />
+  <!-- Add GA4 / Google Ads tags here when measurement IDs are available. -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+  </script>
 </head>
 <body>
   <header class="site-header">
@@ -24,7 +29,7 @@
         <a href="#contato" data-i18n="nav.contact">Contato</a>
       </nav>
       <div class="header-actions">
-        <a class="cta-btn" href="#contato" data-i18n="cta.contact">Solicitar Contato</a>
+        <a class="cta-btn" href="#contato" data-i18n="cta.contact" data-conversion="cta_request_demo_header">Solicitar demo</a>
         <div class="lang-toggle" role="group" aria-label="Selecionar idioma">
           <button data-lang="pt" class="active" aria-label="Português">
             <span class="flag" aria-hidden="true">🇧🇷</span>
@@ -47,7 +52,7 @@
           <h1 class="hero-title" data-i18n="hero.title">Gestão empresarial de documentos sem complexidade</h1>
           <p data-i18n="hero.description">Centralize, pesquise, versione e audite os documentos da sua empresa em uma plataforma segura com OCR, automação de fluxos e integrações empresariais.</p>
           <div class="hero-actions">
-            <a class="primary" href="#contato" data-i18n="hero.primary">Solicitar demo</a>
+            <a class="primary" href="#contato" data-i18n="hero.primary" data-conversion="cta_request_demo_hero">Solicitar demo</a>
             <a class="secondary" href="#dms" data-i18n="hero.secondary">Conhecer o DMS</a>
           </div>
           <div class="hero-metrics">
@@ -226,7 +231,7 @@
             <li data-i18n="dms.card.point3">Controle acesso, retenção, aprovações e regras de fluxo por contexto.</li>
             <li data-i18n="dms.card.point4">Acompanhe status, versões e eventos de auditoria em um único painel.</li>
           </ul>
-          <a class="link-cta" href="#contato" data-i18n="dms.card.cta">Solicitar demonstração</a>
+          <a class="link-cta" href="#contato" data-i18n="dms.card.cta" data-conversion="cta_request_demo_product">Solicitar demonstração</a>
         </div>
       </div>
       <div class="product-grid">
@@ -289,7 +294,7 @@
           <p class="eyebrow" data-i18n="conversion.eyebrow">Demonstração guiada</p>
           <h2 data-i18n="conversion.title">Veja como o DMS se encaixa na sua operação documental</h2>
           <p class="section-text" data-i18n="conversion.text">Em uma conversa objetiva, mapeamos os tipos de documentos, integrações, regras de acesso e pontos de auditoria para demonstrar um fluxo próximo da sua realidade.</p>
-          <a class="link-cta dark-link" href="#contato" data-i18n="conversion.cta">Solicitar demo</a>
+          <a class="link-cta dark-link" href="#contato" data-i18n="conversion.cta" data-conversion="cta_request_demo_guided">Solicitar demo</a>
         </div>
         <ol class="funnel-list" aria-label="Etapas da demonstração do WVS DMS">
           <li data-i18n="conversion.step1">Mapeamento dos documentos críticos</li>
@@ -446,7 +451,7 @@
         <div>
           <p class="section-text" data-i18n="contact.text">Conte para a WVS Systems quais desafios precisam ser acelerados. Retornamos com um plano de ação em até 48 horas.</p>
           <ul class="contact-info">
-            <li><strong data-i18n="contact.emailLabel">E-mail:</strong> <a href="mailto:contato@wvssystems.com.br" data-i18n="contact.emailValue">contato@wvssystems.com.br</a></li>
+            <li><strong data-i18n="contact.emailLabel">E-mail:</strong> <a href="mailto:contato@wvssystems.com.br" data-i18n="contact.emailValue" data-conversion="email_click">contato@wvssystems.com.br</a></li>
           </ul>
         </div>
         <form class="contact-form" novalidate>
@@ -459,11 +464,54 @@
             <input type="email" name="email" placeholder="Seu e-mail" data-i18n-placeholder="form.emailPlaceholder" required />
           </label>
           <label>
+            <span data-i18n="form.company">Empresa</span>
+            <input type="text" name="company" placeholder="Nome da empresa" data-i18n-placeholder="form.companyPlaceholder" required />
+          </label>
+          <label>
+            <span data-i18n="form.segment">Segmento</span>
+            <select name="segment" required>
+              <option value="" data-i18n="form.segmentPlaceholder">Selecione o segmento</option>
+              <option value="financial_services" data-i18n="form.segmentFinancial">Serviços financeiros</option>
+              <option value="insurance" data-i18n="form.segmentInsurance">Seguros</option>
+              <option value="retail_services" data-i18n="form.segmentRetail">Varejo ou serviços</option>
+              <option value="other" data-i18n="form.segmentOther">Outro</option>
+            </select>
+          </label>
+          <label>
+            <span data-i18n="form.volume">Volume documental mensal</span>
+            <select name="monthly_document_volume" required>
+              <option value="" data-i18n="form.volumePlaceholder">Selecione uma faixa</option>
+              <option value="up_to_1000" data-i18n="form.volume1">Até 1.000 documentos/mês</option>
+              <option value="1000_to_10000" data-i18n="form.volume2">1.000 a 10.000 documentos/mês</option>
+              <option value="10000_plus" data-i18n="form.volume3">Mais de 10.000 documentos/mês</option>
+              <option value="not_sure" data-i18n="form.volumeUnknown">Ainda não tenho esse número</option>
+            </select>
+          </label>
+          <label>
+            <span data-i18n="form.challenge">Principal desafio</span>
+            <select name="document_challenge" required>
+              <option value="" data-i18n="form.challengePlaceholder">Selecione o desafio</option>
+              <option value="search_and_organization" data-i18n="form.challengeSearch">Busca e organização de documentos</option>
+              <option value="ocr_extraction" data-i18n="form.challengeOcr">OCR e extração de dados</option>
+              <option value="audit_compliance" data-i18n="form.challengeAudit">Auditoria, retenção e compliance</option>
+              <option value="workflow_automation" data-i18n="form.challengeWorkflow">Automação de aprovações e fluxos</option>
+            </select>
+          </label>
+          <label>
             <span data-i18n="form.message">Mensagem</span>
             <textarea name="message" rows="4" placeholder="Como podemos ajudar?" data-i18n-placeholder="form.messagePlaceholder" required></textarea>
           </label>
-          <input type="hidden" name="_subject" value="Novo contato pelo site WVS Systems" />
+          <input type="hidden" name="_subject" value="Solicitação de demo pelo site WVS Systems" />
           <input type="hidden" name="_captcha" value="false" />
+          <input type="hidden" name="page_path" value="" />
+          <input type="hidden" name="utm_source" value="" />
+          <input type="hidden" name="utm_medium" value="" />
+          <input type="hidden" name="utm_campaign" value="" />
+          <input type="hidden" name="utm_term" value="" />
+          <input type="hidden" name="utm_content" value="" />
+          <input type="hidden" name="gclid" value="" />
+          <input type="hidden" name="gbraid" value="" />
+          <input type="hidden" name="wbraid" value="" />
           <input type="text" name="_honey" class="contact-form-honeypot" tabindex="-1" autocomplete="off" />
           <button type="submit" data-i18n="form.submit">Enviar mensagem</button>
           <p class="contact-form-status" role="status" aria-live="polite"></p>
@@ -831,6 +879,25 @@
       'contact.emailValue': { pt: 'contato@wvssystems.com.br', en: 'contato@wvssystems.com.br' },
       'form.name': { pt: 'Nome', en: 'Name' },
       'form.email': { pt: 'E-mail', en: 'Email' },
+      'form.company': { pt: 'Empresa', en: 'Company' },
+      'form.segment': { pt: 'Segmento', en: 'Segment' },
+      'form.segmentPlaceholder': { pt: 'Selecione o segmento', en: 'Select the segment' },
+      'form.segmentFinancial': { pt: 'Serviços financeiros', en: 'Financial services' },
+      'form.segmentInsurance': { pt: 'Seguros', en: 'Insurance' },
+      'form.segmentRetail': { pt: 'Varejo ou serviços', en: 'Retail or services' },
+      'form.segmentOther': { pt: 'Outro', en: 'Other' },
+      'form.volume': { pt: 'Volume documental mensal', en: 'Monthly document volume' },
+      'form.volumePlaceholder': { pt: 'Selecione uma faixa', en: 'Select a range' },
+      'form.volume1': { pt: 'Até 1.000 documentos/mês', en: 'Up to 1,000 documents/month' },
+      'form.volume2': { pt: '1.000 a 10.000 documentos/mês', en: '1,000 to 10,000 documents/month' },
+      'form.volume3': { pt: 'Mais de 10.000 documentos/mês', en: 'More than 10,000 documents/month' },
+      'form.volumeUnknown': { pt: 'Ainda não tenho esse número', en: 'I do not have this number yet' },
+      'form.challenge': { pt: 'Principal desafio', en: 'Main challenge' },
+      'form.challengePlaceholder': { pt: 'Selecione o desafio', en: 'Select the challenge' },
+      'form.challengeSearch': { pt: 'Busca e organização de documentos', en: 'Document search and organization' },
+      'form.challengeOcr': { pt: 'OCR e extração de dados', en: 'OCR and data extraction' },
+      'form.challengeAudit': { pt: 'Auditoria, retenção e compliance', en: 'Audit, retention and compliance' },
+      'form.challengeWorkflow': { pt: 'Automação de aprovações e fluxos', en: 'Approval and workflow automation' },
       'form.message': { pt: 'Mensagem', en: 'Message' },
       'form.submit': { pt: 'Enviar mensagem', en: 'Send message' },
       'form.sending': { pt: 'Enviando...', en: 'Sending...' },
@@ -843,6 +910,7 @@
     const placeholders = {
       'form.namePlaceholder': { pt: 'Seu nome', en: 'Your name' },
       'form.emailPlaceholder': { pt: 'Seu e-mail', en: 'Your email' },
+      'form.companyPlaceholder': { pt: 'Nome da empresa', en: 'Company name' },
       'form.messagePlaceholder': { pt: 'Como podemos ajudar?', en: 'How can we help?' }
     };
 
@@ -862,6 +930,35 @@
     const contactFormStatus = contactForm?.querySelector('.contact-form-status');
     const formSubmitEndpoint = 'https://formsubmit.co/ajax/contato@wvssystems.com.br';
     let currentLanguage = 'pt';
+
+    function trackConversion(eventName, parameters = {}) {
+      if (typeof window.gtag === 'function') {
+        window.gtag('event', eventName, {
+          page_path: window.location.pathname,
+          page_location: window.location.href,
+          language: currentLanguage,
+          ...parameters
+        });
+      }
+    }
+
+    function populateAttributionFields() {
+      if (!contactForm) return;
+      const params = new URLSearchParams(window.location.search);
+      const fields = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content', 'gclid', 'gbraid', 'wbraid'];
+      const pagePath = contactForm.querySelector('input[name="page_path"]');
+
+      if (pagePath) {
+        pagePath.value = `${window.location.pathname}${window.location.hash || ''}`;
+      }
+
+      fields.forEach((fieldName) => {
+        const field = contactForm.querySelector(`input[name="${fieldName}"]`);
+        if (field) {
+          field.value = params.get(fieldName) || '';
+        }
+      });
+    }
 
     function getLocalizedCopy(collection, key, lang = currentLanguage) {
       return collection[key]?.[lang] || collection[key]?.pt || '';
@@ -919,6 +1016,14 @@
       });
     });
 
+    document.querySelectorAll('[data-conversion]').forEach((element) => {
+      element.addEventListener('click', () => {
+        trackConversion(element.dataset.conversion, {
+          link_text: element.textContent.trim()
+        });
+      });
+    });
+
     contactForm?.addEventListener('submit', async (event) => {
       event.preventDefault();
       setFormStatus('', '');
@@ -949,7 +1054,13 @@
         }
 
         contactForm.reset();
+        populateAttributionFields();
         setFormStatus('success', 'success');
+        trackConversion('demo_form_submit', {
+          segment: formData.get('segment') || '',
+          monthly_document_volume: formData.get('monthly_document_volume') || '',
+          document_challenge: formData.get('document_challenge') || ''
+        });
       } catch (error) {
         setFormStatus('error', 'error');
       } finally {
@@ -961,6 +1072,7 @@
       }
     });
 
+    populateAttributionFields();
     setLanguage('pt');
   </script>
 </body>
